@@ -34,3 +34,7 @@ Route::get('chi-tiet-san-pham/{masp}',[
 	'as'=>'chitietsanpham',
 	'uses'=>'PageController@getchitietsanpham'
 ]);
+Route::get('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@getlogin'
+]);

@@ -51,7 +51,7 @@
                                         @endforeach
                                         <!-- /product new-->
                                     </div>
-
+                                    
                                     <div id="slick-nav-1" class="products-slick-nav"></div>
                                 </div>
                                 <!-- /tab -->
