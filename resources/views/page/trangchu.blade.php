@@ -26,13 +26,13 @@
                                        @foreach($sanpham as $sp)
                                         <div class="product">
                                             <div class="product-img">
-                                                <img  src="source/img/{{$sp->img}}" alt=""height=250px>
+                                                <img  src="source/img/{{$sp->img}}" alt="" height="250px">
                                                 <div class="product-label">
                                                 </div>
                                             </div>
                                             <div class="product-body">
                                                 <!--thaythe-->
-                                                <h3 class="product-name"><a href="{{route('chitietsanpham',$sp->masp)}}">{{$sp->tensp}}</a></h3>
+                                                <h3 class="product-name"><a href="{{route('chitietsanpham',$sp->id)}}">{{$sp->tensp}}</a></h3>
                                                 <h4 class="product-price">  <h4 class="product-price">{{$sp->giasp}} VND <del class="product-old-price">
                                                  </del></h4></h4>
                                                  <div class="product-rating">
@@ -44,14 +44,14 @@
                                             </div>
                                             <div class="add-to-cart">
                                                 
-                                                <a href="module/updategiohang.php?id="><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+                                                <a href="{{route('themgiohang',$sp->id)}}"><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
                                             
                                             </div>
                                         </div>
                                         @endforeach
                                         <!-- /product new-->
                                     </div>
-
+                                    
                                     <div id="slick-nav-1" class="products-slick-nav"></div>
                                 </div>
                                 <!-- /tab -->
@@ -103,7 +103,7 @@
                                             </div>
                                             <div class="product-body">
                                                 <!--thaythe-->
-                                                <h3 class="product-name"><a href="product.php?id=">{{$gk->tensp}}</a></h3>
+                                                <h3 class="product-name"><a href="{{route('chitietsanpham',$gk->id)}}">{{$gk->tensp}}</a></h3>
                                                 <h4 class="product-price">  <h4 class="product-price">{{$gk->giasp}} VND <del class="product-old-price">
                                                  </del></h4></h4>
                                             
@@ -112,7 +112,7 @@
                                             </div>
                                             <div class="add-to-cart">
                                                 
-                                                <a href="module/updategiohang.php?id="><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+                                                <a href="{{route('themgiohang',$sp->id)}}"><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
                                             
                                             </div>
                                         </div>

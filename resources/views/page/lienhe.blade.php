@@ -8,7 +8,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Regular Page</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="index.php">Trang chủ</a></li>
+							<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
 							<li class="active">Liên hệ</li>
 						</ul>
 					</div>
