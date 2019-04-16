@@ -48,10 +48,10 @@
 							<h3 class="aside-title"></h3>
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="img/4.jpg" alt="">
+									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Hải sản</a></h3>
 									<h4 class="product-price">20000 VND</h4>
 								</div>
@@ -59,10 +59,10 @@
 
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="img/5.jpg" alt="">
+									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Thập cẩm</a></h3>
 									<h4 class="product-price">20000 VND</h4>
 								</div>
@@ -70,20 +70,20 @@
 
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="img/6.jpg" alt="">
+									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Cá ngừ</a></h3>
 									<h4 class="product-price">20000 VND</h4>
 								</div>
 							</div>
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="img/7.jpg" alt="">
+									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Gà</a></h3>
 									<h4 class="product-price">20000 VND</h4>
 								</div>
@@ -131,8 +131,8 @@
 										</div>
 									</div>
 									<div class="product-body">
-										<p class="product-category">gà rán fivestar</p>
-										<h3 class="product-name"><a href="{{route('chitietsanpham',$ga->id)}}">{{$ga->tensp}}</a></h3>
+										<p class="product-category">pizza-tl</p>
+										<h3 class="product-name"><a href="{{route('chitietsanpham',$ga->masp)}}">{{$ga->tensp}}</a></h3>
 										<h4 class="product-price"> {{$ga->giasp}}VND <del class="product-old-price">
 												 </del></h4>
 										
@@ -140,7 +140,7 @@
 										</div>
 									</div>
 									<div class="add-to-cart">
-										<a href="{{route('themgiohang',$ga->id)}}"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+										<a href="module/updategiohang.php?id="><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
 									</div>
 								</div>
 							</div>

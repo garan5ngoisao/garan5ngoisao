@@ -30,29 +30,32 @@ Route::get('lien-he',[
 	'as'=>'lienhe',
 	'uses'=>'PageController@getlienhe'
 ]);
-Route::get('chi-tiet-san-pham/{id}',[
+Route::get('chi-tiet-san-pham/{masp}',[
 	'as'=>'chitietsanpham',
 	'uses'=>'PageController@getchitietsanpham'
 ]);
+Route::get('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@getlogin'
+]);
+Route::post('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@postLogin'
+]);
 
-
-Route::get('add-to-cart/{id}',[
-	'as'=>'themgiohang',
-	'uses'=>'PageController@getAddtoCart'
+Route::get('dang-ky',[
+	'as'=>'signin',
+	'uses'=>'PageController@getSignin'
 ]);
-Route::get('del-cart/{id}',[
-	'as'=>'xoagiohang',
-	'uses'=>'PageController@getDelItemCart'
+Route::post('dang-ky',[
+	'as'=>'signin',
+	'uses'=>'PageController@postSignin'
 ]);
-Route::get('tang-so-luong/{id}',[
-	'as'=>'tangsoluong',
-	'uses'=>'PageController@gettang'
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
 ]);
-Route::get('dat-hang',[
-	'as'=>'dathang',
-	'uses'=>'PageController@getCheckout'
-]);
-Route::post('dat-hang',[
-	'as'=>'dathang',
-	'uses'=>'PageController@postCheckout'
+Route::get('dang-xuat',[
+	'as'=>'logout',
+	'uses'=>'PageController@getLogout'
 ]);
