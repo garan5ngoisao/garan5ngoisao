@@ -6,13 +6,13 @@ Route::group(['prefix'=>'admin'],function(){
             'as'=>'list',
             'uses'=>'PageController@getDanhsach'
         ]);
-        Route::get('sua/{id}', [
+        Route::get('sua/{masp}', [
             'as'=>'edit',
-            'uses'=>'PageController@getSuaSP'
+            'uses'=>'PageController@getSua'
         ]);
-        Route::post('sua/{id}', [
+        Route::post('sua/{masp}', [
             'as'=>'edit',
-            'uses'=>'PageController@postSuaSP'
+            'uses'=>'PageController@postSua'
         ]);
         Route::get('them', [
             'as'=>'add',
@@ -22,59 +22,60 @@ Route::group(['prefix'=>'admin'],function(){
             'as'=>'add',
             'uses'=>'PageController@postThem'
         ]);
-        Route::get('xoa/{id}', [
+        Route::get('xoa/{masp}', [
             'as'=>'delete',
             'uses'=>'PageController@getXoaSP'
         ]);
     });
-    Route::group(['prefix'=>'tendanhmuc'],function(){
+    Route::group(['prefix'=>'khachhang'],function(){
         Route::get('danhsach', [
-            'as'=>'listtype',
-            'uses'=>'PageController@getDanhsachtype'
+            'as'=>'listkh',
+            'uses'=>'PageController@getDanhsachkh'
         ]);
         Route::get('sua/{id}', [
-            'as'=>'edittype',
-            'uses'=>'PageController@getSualoai'
+            'as'=>'editkh',
+            'uses'=>'PageController@getSuakh'
         ]);
         Route::post('sua/{id}', [
             'as'=>'edittype',
-            'uses'=>'PageController@postSualoai'
+            'uses'=>'PageController@postSuakh'
         ]);
         Route::get('them', [
-            'as'=>'addtype',
-            'uses'=>'PageController@getThemloai'
+            'as'=>'addkh',
+            'uses'=>'PageController@getThemkh'
         ]);
         Route::post('them', [
-            'as'=>'addtype',
-            'uses'=>'PageController@postThemloai'
+            'as'=>'addkh',
+            'uses'=>'PageController@postThemkh'
         ]);
         Route::get('xoa/{id}', [
-            'as'=>'deleteloai',
-            'uses'=>'PageController@getXoaloai'
+            'as'=>'deletekh',
+            'uses'=>'PageController@getXoakh'
         ]);
     });
 
 });
-
+//danh muc
+  
 
 Route::get('/',[
-	'as'=>'trang-chu',
+    'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
 ]);
 
 Route::get('ga-ran',[
-	'as'=>'ga-ran',
-	'uses'=>'PageController@getgaran'
+    'as'=>'ga-ran',
+    'uses'=>'PageController@getgaran'
 ]);
 Route::get('giai-khat',[
-	'as'=>'giai-khat',
-	'uses'=>'PageController@getgiaikhat'
+    'as'=>'giai-khat',
+    'uses'=>'PageController@getgiaikhat'
 ]);
 Route::get('lien-he',[
-	'as'=>'lienhe',
-	'uses'=>'PageController@getlienhe'
+    'as'=>'lienhe',
+    'uses'=>'PageController@getlienhe'
 ]);
 Route::get('chi-tiet-san-pham/{masp}',[
-	'as'=>'chitietsanpham',
-	'uses'=>'PageController@getchitietsanpham'
+    'as'=>'chitietsanpham',
+    'uses'=>'PageController@getchitietsanpham'
 ]);

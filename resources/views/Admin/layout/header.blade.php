@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="">Admin Area - Thế Anh </a>
+                <a class="navbar-brand" href="index.html">Admin Area - Thế Anh - Hoàng Hên</a>
             </div>
             <!-- /.navbar-header -->
 
