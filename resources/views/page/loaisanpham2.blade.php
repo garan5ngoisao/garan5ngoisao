@@ -7,6 +7,25 @@
 				<div class="row">
 					<!-- ASIDE -->
 					<div id="aside" class="col-md-3">
+						<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
+							<li class="active">Gà Rán</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
 						<!-- aside Widget -->
 						<!-- /aside Widget -->
 
@@ -26,7 +45,7 @@
 									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Trà đào</a></h3>
 									<h4 class="product-price">15000 VND </h4>
 								</div>
@@ -37,7 +56,7 @@
 									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Sữa tươi</a></h3>
 									<h4 class="product-price">15000 VND</h4>
 								</div>
@@ -48,7 +67,7 @@
 									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Nước khoáng</a></h3>
 									<h4 class="product-price">10000 VND</h4>
 								</div>
@@ -58,7 +77,7 @@
 									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">PIZZA-TL</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">PESSI</a></h3>
 									<h4 class="product-price">10000 VND</h4>
 								</div>

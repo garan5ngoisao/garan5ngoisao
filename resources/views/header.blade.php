@@ -1,3 +1,4 @@
+
 <div id="header">
                 <!-- container -->
                 <div class="container">
@@ -16,10 +17,10 @@
                         <!-- SEARCH BAR -->
                         <div class="col-md-6">
                             <div class="header-search">
-                                <form action="search.php" method="post" enctype="multipart/form-data">
+                                <form action="{{route('search')}}" method="get" enctype="multipart/form-data">
             
-                                    <input class="input" placeholder="Pizza thập cẩm" name=ts value="">
-                                    <button class="search-btn" name="sm">Tìm kiếm</button>
+                                    <input class="input" placeholder="Món cần tìm" name=key value="">
+                                    <button class="search-btn">Tìm kiếm</button>
                                 </form>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -46,14 +46,15 @@
                 <div class="container">
 
                     <ul class="header-links pull-right">
-                        
-                        <li><a href="qltn.php">Xin chào  </a></li>
-                        <li><a href="module/logout.php">Đăng xuất</a></li>
-                        
-                        
-                        <li><a href="#"><i class="fa fa-dollar"></i> VND</a></li>
-                        <li><a href="{{route('login')}}"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
-                        
+                        @if(Auth::check())
+                        <li><a href=""> Chào Bạn {{Auth::user()->full_name}}</a></li>
+                        <li><a href="{{route('logout')}}">Đăng xuất</a></li>
+
+                        @else
+                                                 <!-- <li><a href="#"><i class="fa fa-dollar"></i> VND</a></li> -->
+   
+                        <li><a href="{{route('login')}}"></i> Đăng Nhập</a></li>
+                        @endif
 
                     </ul>
                 </div>

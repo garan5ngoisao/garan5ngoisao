@@ -26,7 +26,7 @@
         <div class="container">
             <div class="center">        
                 <h2 align="center">Liên hệ với chúng tôi</h2>
-                <p align="center" style="font-style: italic;">"PIZZA-TL"</p>
+                <p align="center" style="font-style: italic;">"Gà Rán 5 Ngôi Sao"</p>
                 <hr>
             </div> 
             <div class="row contact-wrap"> 

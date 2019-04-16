@@ -24,30 +24,27 @@
                                     <div class="products-slick" data-nav="#slick-nav-1">
                                         <!-- product new -->
                                        @foreach($sanpham as $sp)
-                                        <div class="product">
-                                            <div class="product-img">
-                                                <img  src="source/img/{{$sp->img}}" alt=""height=250px>
-                                                <div class="product-label">
-                                                </div>
-                                            </div>
-                                            <div class="product-body">
-                                                <!--thaythe-->
-                                                <h3 class="product-name"><a href="{{route('chitietsanpham',$sp->masp)}}">{{$sp->tensp}}</a></h3>
-                                                <h4 class="product-price">  <h4 class="product-price">{{$sp->giasp}} VND <del class="product-old-price">
-                                                 </del></h4></h4>
-                                                 <div class="product-rating">
-                                                        <div class="product-options">
-                                               
-                                                </div>
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="add-to-cart">
-                                                
-                                                <a href="module/updategiohang.php?id="><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
-                                            
-                                            </div>
+                                        <div class="col-md-4 col-xs-6">
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="source/img/{{$sp->img}}" alt="" height=250px>
+                                        <div class="product-label">
                                         </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">pizza-tl</p>
+                                        <h3 class="product-name"><a href="{{route('chitietsanpham',$sp->masp)}}">{{$sp->tensp}}</a></h3>
+                                        <h4 class="product-price"> {{$sp->giasp}}VND <del class="product-old-price">
+                                                 </del></h4>
+                                        
+                                        <div class="product-btns">
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="module/updategiohang.php?id="><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+                                    </div>
+                                </div>
+                            </div>
                                         @endforeach
                                         <!-- /product new-->
                                     </div>
@@ -95,27 +92,33 @@
                                     <div class="products-slick" data-nav="#slick-nav-2">
                                         <!-- product hot-->
                                        @foreach($giaikhat as $gk)
-                                        <div class="product">
-                                            <div class="product-img">
-                                                <img  src="source/img/{{$gk->img}}" alt="">
-                                                <div class="product-label">
-                                                </div>
-                                            </div>
-                                            <div class="product-body">
-                                                <!--thaythe-->
-                                                <h3 class="product-name"><a href="product.php?id=">{{$gk->tensp}}</a></h3>
-                                                <h4 class="product-price">  <h4 class="product-price">{{$gk->giasp}} VND <del class="product-old-price">
-                                                 </del></h4></h4>
-                                            
-                                                <div class="product-btns">
-                                                </div>
-                                            </div>
-                                            <div class="add-to-cart">
-                                                
-                                                <a href="module/updategiohang.php?id="><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
-                                            
-                                            </div>
+                                        <div class="col-md-4 col-xs-6">
+                                <div class="product">
+                                    <div class="product-img">
+                                        <img src="source/img/{{$gk->img}}" alt="">
+                                        <div class="product-label">
                                         </div>
+                                    </div>
+                                    <div class="product-body">
+                                        <p class="product-category">pizza-tl</p>
+                                        <h3 class="product-name"><a href="{{route('chitietsanpham',$gk->masp)}}">{{$gk->tensp}}</a></h3>
+                                        <h4 class="product-price"> {{$gk->giasp}}VND <del class="product-old-price">
+                                                 </del></h4>
+                                        <div class="product-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <div class="product-btns">
+                                        </div>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="module/updategiohang.php?id="><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+                                    </div>
+                                </div>
+                            </div>
                                         @endforeach
 
                                         <!-- product hot -->
