@@ -7,6 +7,25 @@
 				<div class="row">
 					<!-- ASIDE -->
 					<div id="aside" class="col-md-3">
+						<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
+							<li class="active">Gà Rán</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
 						<!-- aside Widget -->
 						<!-- /aside Widget -->
 
@@ -23,19 +42,46 @@
 							<h3 class="aside-title">CÓ thể bạn cần</h3>
 							<div class="product-widget">
 								<div class="product-img">
-									<img src="source/img/10.jpg" alt="">
+									<img src="source/img/1.jpg" alt="">
 								</div>
 								<div class="product-body">
-									<p class="product-category">GÀ RÁN FIVESTAR</p>
+									<p class="product-category">*</p>
 									<h3 class="product-name"><a href="#">Trà đào</a></h3>
 									<h4 class="product-price">15000 VND </h4>
 								</div>
 							</div>
 
-							
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">Sữa tươi</a></h3>
+									<h4 class="product-price">15000 VND</h4>
+								</div>
+							</div>
 
-							
-							
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">Nước khoáng</a></h3>
+									<h4 class="product-price">10000 VND</h4>
+								</div>
+							</div>
+							<div class="product-widget">
+								<div class="product-img">
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">PESSI</a></h3>
+									<h4 class="product-price">10000 VND</h4>
+								</div>
+							</div>
 						</div>
 						<!-- /aside Widget -->
 					</div>
@@ -80,8 +126,8 @@
 										</div>
 									</div>
 									<div class="product-body">
-										<p class="product-category">GÀ RÁN FIVESTAR</p>
-										<h3 class="product-name"><a href="{{route('chitietsanpham',$gk->id)}}">{{$gk->tensp}}</a></h3>
+										<p class="product-category">pizza-tl</p>
+										<h3 class="product-name"><a href="{{route('chitietsanpham',$gk->masp)}}">{{$gk->tensp}}</a></h3>
 										<h4 class="product-price"> {{$gk->giasp}}VND <del class="product-old-price">
 												 </del></h4>
 										<div class="product-rating">
@@ -95,7 +141,7 @@
 										</div>
 									</div>
 									<div class="add-to-cart">
-										<a href="{{route('themgiohang',$gk->id)}}"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+										<a href="module/updategiohang.php?id="><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
 									</div>
 								</div>
 							</div>

@@ -111,8 +111,10 @@ function dinhdangso(&$number)
                 <p align="center" style="font-style: italic;">"Ngon khó cưỡng"</p>
                 <hr>
             </div> 
+
             <div class="row contact-wrap"> 
                 <div class="status alert alert-success" style="display: none"></div>
+
 
                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="module/login.php">
                     <div class="col-sm-5 col-sm-offset-1">
@@ -137,38 +139,42 @@ function dinhdangso(&$number)
                         </div>                        
                     </div>
                 </form>
-                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="module/signup.php">
+                 
+                 <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="{{routes(signin)}">
                     <div class="col-sm-5">
+                      
+                    @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                        {{$err}}
+                        @endforeach
+                    @if(Session::has('thanhcong'))
+                    <div class="alert alert-success">{{Session::get('thanhcong')}}</div>
+                    @endif
+                
+
                         <a align="center" style="font-size: 25px">Đăng ký</a>
-                        <?php
-                            	if($errortaitonid=="suscess")
-                            		echo '<br><a style="color: #00b33c"><i>(*) Cảm ơn quí khách đã đăng ký tài khoản thành công! Đăng nhập để bắt đầu mua sắm!</i></a>'
-                            ?>
-                        <hr>
+            
+                        <!-- <hr> -->
+
                         
-                        <div class="form-group">
+                       <!--  <div class="form-group">
                             <label>Tên <a style="color: red">*</a></label>
                             <input type="text" name="hoten" class="form-control" required="required">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>Tài khoản <a style="color: red">*</a></label>
-                            <input type="text" name="u" class="form-control" required="required">
-                            <?php
-                            	if($errortaitonid=="errorid")
-                            		echo '<a style="color:red"><i>(*) Tài khoản đã tồn tại!</i></a>'
-                            ?>
+                            <input type="text" name="fullname" class="form-control" required="required">
+                           
                         </div>
                         <div class="form-group">
                             <label>Mật khẩu <a style="color: red">*</a></label>
-                            <input type="password" name="p" class="form-control" required="required">
+                            <input type="password" name="password" class="form-control" required="required">
                         </div>
                         <div class="form-group">
                             <label>Nhập lại Mật khẩu <a style="color: red">*</a></label>
-                            <input type="password" name="pre" class="form-control" required="required">
-                            <?php
-                            	if($errortaitonid=="errorpassre")
-                            		echo '<a style="color:red"><i>(*) Mật khẩu không giống!</i></a>'
-                            ?>
+                            <input type="password" name="re_password" class="form-control" required="required">
+                           
                         </div>
                         <div class="form-group">
                             <label>Email <a style="color: red">*</a></label>
@@ -176,22 +182,20 @@ function dinhdangso(&$number)
                         </div>
                         <div class="form-group">
                             <label>Số điện thoại<a style="color: red"> *</a></label>
-                            <input type="sdt" name="sdt" class="form-control" required="required">
-                            <?php
-                            	if($errortaitonid=="errorsdt")
-                            		echo '<br><a style="color:red"><i>(*) Vui lòng nhập số điện thoại  dưới 11 chữ số và không có ký tự đặt biệt</i></a>'
-                            ?>
+                            <input type="sdt" name="phone" class="form-control" required="required">
+                           
 
                         </div>
                         <div class="form-group">
                             <label>Địa chỉ</label>
-                            <input type="text" name="diachi" class="form-control">
+                            <input type="text" name="address" class="form-control">
                         </div>
                         <div class="form-group">
                             <button type="submit" name="smuserdangky" class="btn btn-primary btn-lg" required="required" value="userdangnhap">Gửi</button>
                         </div>   
                     </div>
-                </form> 
+
+               
 
             </div><!--/.row-->
         </div><!--/.container-->
@@ -199,7 +203,6 @@ function dinhdangso(&$number)
 		<!-- /SECTION -->
 
 		<!-- NEWSLETTER -->
-
 		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->
