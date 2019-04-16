@@ -101,7 +101,11 @@
 					<div class="col-md-12">
 						<ul class="breadcrumb-tree">
 							<li><a href="#">Home</a></li>
+<<<<<<< HEAD
 							<li><a href="#">Sản Phẩm</a></li>
+=======
+							<li><a href="#"></a></li>
+>>>>>>> timkiemdangnhap
 						
 						</ul>
 					</div>

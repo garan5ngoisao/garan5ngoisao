@@ -47,44 +47,80 @@
 							<h3 class="aside-title">CÓ thể bạn cần</h3>
 							<div class="product-widget">
 								<div class="product-img">
+<<<<<<< HEAD
 									<img src="img/10.jpg" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">PIZZA-TL</p>
 									<h3 class="product-name"><a href="#">Trà đào</a></h3>
 									<h4 class="product-price">15000 VND </h4>
+=======
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">Hải sản</a></h3>
+									<h4 class="product-price">20000 VND</h4>
+>>>>>>> timkiemdangnhap
 								</div>
 							</div>
 
 							<div class="product-widget">
 								<div class="product-img">
+<<<<<<< HEAD
 									<img src="img/11.jpg" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">PIZZA-TL</p>
 									<h3 class="product-name"><a href="#">Sữa tươi</a></h3>
 									<h4 class="product-price">15000 VND</h4>
+=======
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">Thập cẩm</a></h3>
+									<h4 class="product-price">20000 VND</h4>
+>>>>>>> timkiemdangnhap
 								</div>
 							</div>
 
 							<div class="product-widget">
 								<div class="product-img">
+<<<<<<< HEAD
 									<img src="img/12.jpg" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">PIZZA-TL</p>
 									<h3 class="product-name"><a href="#">Nước khoáng</a></h3>
 									<h4 class="product-price">10000 VND</h4>
+=======
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">Cá ngừ</a></h3>
+									<h4 class="product-price">20000 VND</h4>
+>>>>>>> timkiemdangnhap
 								</div>
 							</div>
 							<div class="product-widget">
 								<div class="product-img">
+<<<<<<< HEAD
 									<img src="img/9.jpg" alt="">
 								</div>
 								<div class="product-body">
 									<p class="product-category">PIZZA-TL</p>
 									<h3 class="product-name"><a href="#">PESSI</a></h3>
 									<h4 class="product-price">10000 VND</h4>
+=======
+									<img src="source/img/1.jpg" alt="">
+								</div>
+								<div class="product-body">
+									<p class="product-category">*</p>
+									<h3 class="product-name"><a href="#">Gà</a></h3>
+									<h4 class="product-price">20000 VND</h4>
+>>>>>>> timkiemdangnhap
 								</div>
 							</div>
 						</div>
@@ -131,8 +167,13 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">pizza-tl</p>
+<<<<<<< HEAD
 										<h3 class="product-name"><a href="#"></a></h3>
 										<h4 class="product-price"> VND <del class="product-old-price">
+=======
+										<h3 class="product-name"><a href="{{route('chitietsanpham',$ga->masp)}}">{{$ga->tensp}}</a></h3>
+										<h4 class="product-price"> {{$ga->giasp}}VND <del class="product-old-price">
+>>>>>>> timkiemdangnhap
 												 </del></h4>
 										
 										<div class="product-btns">

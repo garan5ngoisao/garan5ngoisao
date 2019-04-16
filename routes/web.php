@@ -77,4 +77,32 @@ Route::get('lien-he',[
 Route::get('chi-tiet-san-pham/{masp}',[
 	'as'=>'chitietsanpham',
 	'uses'=>'PageController@getchitietsanpham'
+<<<<<<< HEAD
+=======
+]);
+Route::get('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@getlogin'
+]);
+Route::post('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@postLogin'
+]);
+
+Route::get('dang-ky',[
+	'as'=>'signin',
+	'uses'=>'PageController@getSignin'
+]);
+Route::post('dang-ky',[
+	'as'=>'signin',
+	'uses'=>'PageController@postSignin'
+]);
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
+]);
+Route::get('dang-xuat',[
+	'as'=>'logout',
+	'uses'=>'PageController@getLogout'
+>>>>>>> timkiemdangnhap
 ]);
