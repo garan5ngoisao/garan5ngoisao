@@ -7,7 +7,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul class="breadcrumb-tree">
-							<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
+							<li><a href="#">Home</a></li>
 							<li><a href="#"></a></li>
 						
 						</ul>
@@ -75,9 +75,9 @@
 								-->
 								
 							</div>
-						
+						<form action = "module/updategiohang.php" method="get">
 							<div class="add-to-cart">
-								<!--<div class="qty-label">
+								<div class="qty-label">
 									Số Lượng
 									<div class="input-number">
 										<input type="number" value="1" name="soluong">
@@ -85,10 +85,10 @@
 										<span class="qty-down">-</span>
 									</div>
 									<input type="hidden" value="" name="id">
-								</div>-->
-								<a href="{{route('themgiohang',$sanphamt->id)}}"><button class="add-to-cart-btn" name="them"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+								</div>
+								<a><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Thêm giỏ hàng</button></a>
 							</div>
-						
+						</form>
 						
 							<ul class="product-links">
 								<li>Share:</li>

@@ -26,7 +26,7 @@
 						<?php } ?>
 						<?php if(!isset($_SESSION['userdangnhap']['hoten'])){ ?>
 						<li><a href="#"><i class="fa fa-dollar"></i> VND</a></li>
-						<li><a href="../dangnhap.php"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
+						<li><a href="../../dangnhap.php"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
 						<?php } ?>
 
 					</ul>

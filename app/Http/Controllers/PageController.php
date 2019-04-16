@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\sanpham;
-use App\Cart;
-use App\khachhang;
-use App\hoadon;
-use App\donhangchitiet;
-use Session;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use Hash;
+use Session;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use Auth;
 class PageController extends Controller
 {
     public function getIndex(){
@@ -29,68 +29,74 @@ class PageController extends Controller
     	return view('page.lienhe');
     }
     public function getchitietsanpham(Request $req){
-        $sanphamt =sanpham::where('id',$req->id)->first();
+        $sanphamt =sanpham::where('masp',$req->masp)->first();
     	return view('page.chitiet',compact('sanphamt'));
     }
-    
-    
-    public function getAddtoCart(Request $req,$id)
+    public function getlogin(){
+        return view('page.dangnhap');
+    }
+    public function postSignin(Request $req){
+
+        $this -> validate($req,
+            [
+                'email'=>'required|email|unique:users,email',
+                'password'=>'required|min:6|max:20',
+                'fullname'=>'required',
+                
+
+            ],
+            [
+                'email.require'=>'Vui lòng nhập email nha',
+                'email.email'=>'Sai định dạng email nha cưng',
+                'email.unique'=>'Email đã tồn tại',
+                'password'=>'Vui lòng nhập mật khẩu',
+                
+
+            ]
+        );
+        $user= new User();
+        $user->full_name=$req->fullname;
+        $user->email=$req->email;
+        $user->password=Hash::make($req->password);
+        
+        $user->phone=$req->phone;
+        $user->address=$req->address;
+        $user->save();
+        return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
+
+    }
+    public function getSearch(Request $req)
     {
-        $product =sanpham::find($id);
-        $oldCart = Session('cart')?Session::get('cart'):null;
-        $cart =new Cart($oldCart);
-        $cart->add($product,$id);
-        $req->session()->put('cart',$cart);
-        return redirect()->back();
+        $sanpham= sanpham::where('tensp','like','%'.$req->key.'%')
+                            ->orWhere('giasp',$req->key)
+                            ->get();
+                        return view('page.search',compact('sanpham'));
     }
-    public function getDelItemCart($id){
-        $oldCart =Session::has('cart')?Session::get('cart'):null;
-        $cart =new Cart($oldCart);
-        $cart->removeItem($id);
-        
-        if(count($cart->items)>0){
-            Session::put('cart',$cart);
-        }
-        else{
-            Session::forget('cart');
-        }
-        return redirect()->back();
-    }
-    public function gettang(Request $req,$id)
+    public function  postLogin(Request $req)
     {
-        $product =sanpham::find($id);
-        $oldCart = Session('cart')?Session::get('cart'):null;
-        $cart =new Cart($oldCart);
-        $cart->tang($product,$id);
-        $req->session()->put('cart',$cart);
-        return redirect()->back();
+        // $this->validate($req,
+        //     [
+        //         'email' as 'required|email',
+        //         'password' as 'required|min:6|max:20',
+
+        //     ],
+        //     [
+        //         'email.required'=>'vui long nhap email',
+        //         'email.email'=>'không đúng định dạng email',
+        //         'password.required'=>'Vui lòng nhập mật khẩu',
+        //         'password.min'=>'Mật khẩu ít nhất 6 kí tự'
+        //     ]);
+        $credentials=array('email' => $req->email,'password' => $req->password);
+        if(Auth::attempt($credentials))
+        {
+return redirect()->back()->with(['flag'=>'success','message'=>'Đăng Nhập Thành Công']);
+        }
+        else
+            return redirect()->back()->with(['flag'=>'fail','message'=>'Đăng Nhập Không Thành Công']);
     }
-    public function getCheckout(Request $req){
-        return view('page.dathang');
+    public function getLogout(Request $req)
+    {
+        Auth::logout();
+        return redirect()->route('trang-chu');
     }
-    public function postCheckout(Request $req){
-        $cart =Session::get('cart');
-        
-        $customer =new khachhang;
-        $customer ->tenkh =$req ->hoten;
-        $customer ->email=$req->email;
-        $customer->diachi =$req->diachi;
-        $customer->sodienthoai=$req->sdt;
-        $customer->note=$req->ghichu;
-        $customer->save();
-
-        $bill =new hoadon;
-        $bill->idkhachhang =$customer->id;
-        $bill->ngaylap =date('Y-m-d');
-        $bill->tonggia =$cart ->totalPrice;
-        $bill->diachi=$req->diachi;
-        $bill->ghichu=$req ->ghichu;
-        $bill->save();  
-
-        
-        Session::forget('cart');
-        return redirect()->back()->with('thongbao','Đặt hàng thành công');
-
-          }
-
 }
