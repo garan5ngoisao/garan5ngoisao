@@ -5,8 +5,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Thêm
-                        <small>Sản Phẩm</small>
+                    <h1 class="page-header">Cake
+                        <small>Add</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -26,11 +26,11 @@
                         @endif
                          <input type="hidden" name="_token" value="{{csrf_token()}}" placeholder="">
                         <div class="form-group">
-                            <label>Tên sản phẩm</label>
-                            <input class="form-control" name="tensp" placeholder="Mời bạn nhập tên sản phẩm" />
+                            <label> tensp</label>
+                            <input class="form-control" name="tensp" placeholder="Please Enter Name" />
                         </div>
                         <div class="form-group" >
-                            <label>Tên danh mục</label>
+                            <label>Ten danh muc</label>
                             <select class="form-control" name="id_danhmuc" id="">
                                 @foreach($tendanhmuc as $tdm)
                                     <option value="{{$tdm->id_danhmuc}}">{{$tdm->name}}</option>
@@ -38,18 +38,18 @@
                             </select>
                         </div>
                          <div class="form-group">
-                            <label>Giá sản phẩm</label>
-                            <input class="form-control" name="giasp" placeholder="Mời bạn nhập giá" />
+                            <label>Giasp</label>
+                            <input class="form-control" name="giasp" placeholder="Please Enter Unit_price" />
                         </div>
                         <div class="form-group">
-                            <label>Mô tả</label>
-                            <textarea  name="mota" rows="3" id="demo" placeholder="Mời bạn nhập mô tả"></textarea>
+                            <label>mo ta</label>
+                            <textarea class="form-control ckeditor" name="mota" rows="3" id="demo" ></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Hình sản phẩm</label>
-                            <input type="file" class="form-control" name="img"  />
+                            <label>Hinh sp</label>
+                            <input type="file" class="form-control" name="img" placeholder="Please Enter hinh" />
                         </div>
-                        <button type="submit" class="btn btn-default">Thêm</button>
+                        <button type="submit" class="btn btn-default">Add</button>
                         <button type="reset" class="btn btn-default">Reset</button>
                         <form>
                         </div>

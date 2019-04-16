@@ -5,51 +5,46 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Cake
+                    <h1 class="page-header">CakeType
                         <small>Add</small>
                     </h1>
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <form action="{{'admin/sanpham/them'}}" method="POST" enctype="multipart/form-data">
-                        @if(count($errors)>0)
-                            <div class="alert alert-danger">
-                                @foreach($errors->all() as $er)
-                                {{$er}}<br>
-                                @endforeach
-                            </div>
-                        @endif
-                        @if(session('thongbao'))
-                            <div class="alert alert-success">
-                                {{session('thongbao')}}
-                            </div>
-                        @endif
-                         <input type="hidden" name="_token" value="{{csrf_token()}}" placeholder="">
+                    <form action="admin/cake_type/sua/{{$caketype->id}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $er)
+                        {{$er}}<br>
+                        @endforeach
+                    </div>
+                    @endif
+                    @if(session('thongbao'))
+                    <div class="alert alert-success">
+                        {{session('thongbao')}}
+                    </div>
+                    @endif
+
                         <div class="form-group">
-                            <label> tensp</label>
-                            <input class="form-control" name="tensp" placeholder="Please Enter Name" />
-                        </div>
-                        <div class="form-group" >
-                            <label>Ten danh muc</label>
-                            <select class="form-control" name="id_danhmuc" id="">
-                                @foreach($tendanhmuc as $tdm)
-                                    <option value="{{$tdm->id_danhmuc}}">{{$tdm->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                         <div class="form-group">
-                            <label>Giasp</label>
-                            <input class="form-control" name="giasp" placeholder="Please Enter Unit_price" />
+                            <label>Category Name</label>
+                            <input class="form-control" name="name" value="{{$caketype->name}}" placeholder="Please Enter Category Name" />
                         </div>
                         <div class="form-group">
-                            <label>mo ta</label>
-                            <textarea class="form-control ckeditor" name="mota" rows="3" id="demo" ></textarea>
+                            <label>Category Description</label>
+                            <textarea class="form-control ckeditor" value="" name="description" rows="3">
+                                {{$caketype->description}}
+                            </textarea>
                         </div>
                         <div class="form-group">
-                            <label>Hinh sp</label>
-                            <input type="file" class="form-control" name="img" placeholder="Please Enter hinh" />
+                            <label>Category Image</label>
+                            <p>
+                                <img width="400px" src="source/image/product/{{$caketype->image}}" alt="">
+                            </p>
+
+                            <input class="form-control" type="file" name="image" value="" placeholder="">
                         </div>
-                        <button type="submit" class="btn btn-default">Add</button>
+                        <button type="submit" class="btn btn-default">Category Add</button>
                         <button type="reset" class="btn btn-default">Reset</button>
                         <form>
                         </div>
