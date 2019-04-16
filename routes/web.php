@@ -56,7 +56,32 @@ Route::group(['prefix'=>'admin'],function(){
 
 });
 
-
+Route::group(['prefix'=>'khachhang'],function(){
+        Route::get('danhsach', [
+            'as'=>'listkh',
+            'uses'=>'PageController@getDanhsachkh'
+        ]);
+        Route::get('sua/{id}', [
+            'as'=>'editkh',
+            'uses'=>'PageController@getSuakh'
+        ]);
+        Route::post('sua/{id}', [
+            'as'=>'edittype',
+            'uses'=>'PageController@postSuakh'
+        ]);
+        Route::get('them', [
+            'as'=>'addkh',
+            'uses'=>'PageController@getThemkh'
+        ]);
+        Route::post('them', [
+            'as'=>'addkh',
+            'uses'=>'PageController@postThemkh'
+        ]);
+        Route::get('xoa/{id}', [
+            'as'=>'deletekh',
+            'uses'=>'PageController@getXoakh'
+        ]);
+    });
 Route::get('/',[
 	'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
@@ -74,7 +99,56 @@ Route::get('lien-he',[
 	'as'=>'lienhe',
 	'uses'=>'PageController@getlienhe'
 ]);
-Route::get('chi-tiet-san-pham/{masp}',[
+Route::get('chi-tiet-san-pham/{id}',[
 	'as'=>'chitietsanpham',
 	'uses'=>'PageController@getchitietsanpham'
+]);
+Route::get('add-to-cart/{id}',[
+    'as'=>'themgiohang',
+    'uses'=>'PageController@getAddtoCart'
+]);
+Route::get('del-cart/{id}',[
+    'as'=>'xoagiohang',
+    'uses'=>'PageController@getDelItemCart'
+]);
+Route::get('tang-so-luong/{id}',[
+    'as'=>'tangsoluong',
+    'uses'=>'PageController@gettang'
+]);
+Route::get('giam-so-luong/{id}',[
+    'as'=>'giamsoluong',
+    'uses'=>'PageController@getgiam'
+]);
+Route::get('dat-hang',[
+    'as'=>'dathang',
+    'uses'=>'PageController@getCheckout'
+]);
+Route::post('dat-hang',[
+    'as'=>'dathang',
+    'uses'=>'PageController@postCheckout'
+]);
+Route::get('dang-nhap',[
+    'as'=>'login',
+    'uses'=>'PageController@getlogin'
+]);
+Route::post('dang-nhap',[
+    'as'=>'login',
+    'uses'=>'PageController@postLogin'
+]);
+
+Route::get('dang-ky',[
+    'as'=>'signin',
+    'uses'=>'PageController@getSignin'
+]);
+Route::post('dang-ky',[
+    'as'=>'signin',
+    'uses'=>'PageController@postSignin'
+]);
+Route::get('search',[
+    'as'=>'search',
+    'uses'=>'PageController@getSearch'
+]);
+Route::get('dang-xuat',[
+    'as'=>'logout',
+    'uses'=>'PageController@getLogout'
 ]);

@@ -46,6 +46,8 @@ class Cart
 	 {
 	 	$this->items[$id]['qty']++;
 	 	$this->totalQty++;
+	 	$this->totalPrice+=$item->giasp;
 	 
 	 }
+	 
 }

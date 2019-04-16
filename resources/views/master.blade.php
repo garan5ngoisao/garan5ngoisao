@@ -8,7 +8,7 @@
          <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <title>PIZZA-TL - NGON KHÓ CƯỠNG</title>
-
+        <base href="{{asset('')}}">
         <!-- Google font -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
@@ -48,11 +48,11 @@
                     <ul class="header-links pull-right">
                         
                         <li><a href="qltn.php">Xin chào  </a></li>
-                        <li><a href="module/logout.php">Đăng xuất</a></li>
+                        <li><a href="{{route('logout')}}">Đăng xuất</a></li>
                         
                         
                         <li><a href="#"><i class="fa fa-dollar"></i> VND</a></li>
-                        <li><a href="../dangnhap.php"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
+                        <li><a href="{{route('login')}}"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
                         
 
                     </ul>

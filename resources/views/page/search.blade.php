@@ -31,7 +31,7 @@
                                     </div>
                                     <div class="product-body">
                                         <p class="product-category">pizza-tl</p>
-                                        <h3 class="product-name"><a href="{{route('chitietsanpham',$sp->masp)}}">{{$sp->tensp}}</a></h3>
+                                        <h3 class="product-name"><a href="{{route('chitietsanpham',$sp->id)}}">{{$sp->tensp}}</a></h3>
                                         <h4 class="product-price"> {{$sp->giasp}}VND <del class="product-old-price">
                                                  </del></h4>
                                         
@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
-                                        <a href="module/updategiohang.php?id="><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
+                                        <a href="{{route('themgiohang',$sp->id)}}"><button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button></a>
                                     </div>
                                 </div>
                             </div>
