@@ -10,5 +10,4 @@ class sanpham extends Model
     public function danhmuc(){
     	return $this ->belongsTo('App\danhmuc','id_danhmuc','masp');
     }
-    public $timestamps = false;
 }

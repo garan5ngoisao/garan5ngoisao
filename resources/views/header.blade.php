@@ -1,4 +1,3 @@
-
 <div id="header">
                 <!-- container -->
                 <div class="container">
@@ -17,10 +16,10 @@
                         <!-- SEARCH BAR -->
                         <div class="col-md-6">
                             <div class="header-search">
-                                <form action="{{route('search')}}" method="get" enctype="multipart/form-data">
+                                <form action="search.php" method="post" enctype="multipart/form-data">
             
-                                    <input class="input" placeholder="Món cần tìm" name=key value="">
-                                    <button class="search-btn">Tìm kiếm</button>
+                                    <input class="input" placeholder="Pizza thập cẩm" name=ts value="">
+                                    <button class="search-btn" name="sm">Tìm kiếm</button>
                                 </form>
                             </div>
                         </div>
@@ -33,41 +32,59 @@
                                 <!-- /Wishlist -->
 
                                 <!-- Cart -->
+                                @if(Session::has('cart'))
                                 <div class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Giỏ hàng</span>
                                         
-                                        <div class="qty">0 VND</div>
+                                        <div class="qty">
+                                            @if(Session::has('cart')){{Session('cart')->totalQty}}@else Trống @endif</div>
                                     </a>
                                     <div class="cart-dropdown">
                                         <div class="cart-list">
                                             <!-- product giohang-->
                                             
+                                            @foreach($product_cart as $product)
                                             <div class="product-widget">
+                                                
                                                 <div class="product-img">
-                                                    <img src="img" alt="">
+                                                    <img src="source/img/{{$product['item']['img']}}" alt="">
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#"></a></h3>
-                                                    <h4 class="product-price"><span class="qty">x</span> VND</h4>
+                                                    <h3 class="product-name">{{$product['item']['tensp']}}<a href=""></a></h3>
+                                                    <h4 class="product-price"><span class="qty">
+                                                        <div style="right: 39%;position: absolute;" >
+                                        <a href="module/xulysoluong.php?idsp=&thaotac=giam" style="font-size: 20px">-</a>{{$product['qty']}}
+                                        <a href="{{route('tangsoluong',$product['item']['id'])}}" style="font-size: 20px">+</a>
+                                    </div>
+
+                                                        </span>
+                                                        <span>{{number_format($product['item']['giasp'])}}</span>VND</h4>
+                                                        
                                                 </div>
                                                 <a href=
-                                                    "module/xoa.php?id="><button class="delete" name="xoa"><i class="fa fa-close"></i></button></a>
+                                                    "{{route('xoagiohang',$product['item']['id'])}}"><button class="delete" name="xoa"><i class="fa fa-close"></i></button></a>
+                                                    
                                             </div>
                                            
+                                         @endforeach
+
                                             <!-- /product giohang-->
                                         </div>
                                         <div class="cart-summary">
                                             <small></small>
-                                            <h5>Tổng cộng: VND</h5>
+
+                                            <h5>Tổng cộng:{{Session('cart')->totalPrice}}VND</h5>
                                         </div>
                                         <div class="cart-btns">
                                             <a href="#">Nâng cấp</a>
-                                            <a href="checkout.php">Xem giỏ hàng  <i class="fa fa-arrow-circle-right"></i></a>
+                                            <a href="{{route('dathang')}}">Xem giỏ hàng  <i class="fa fa-arrow-circle-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                                 <!-- /Cart -->
 
                                 <!-- Menu Toogle -->

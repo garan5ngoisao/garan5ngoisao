@@ -8,7 +8,7 @@
 					<div class="col-md-12">
 						<h3 class="breadcrumb-header">Regular Page</h3>
 						<ul class="breadcrumb-tree">
-							<li><a href="index.php">Trang chủ</a></li>
+							<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
 							<li class="active">Liên hệ</li>
 						</ul>
 					</div>
@@ -26,7 +26,7 @@
         <div class="container">
             <div class="center">        
                 <h2 align="center">Liên hệ với chúng tôi</h2>
-                <p align="center" style="font-style: italic;">"Gà Rán 5 Ngôi Sao"</p>
+                <p align="center" style="font-style: italic;">"PIZZA-TL"</p>
                 <hr>
             </div> 
             <div class="row contact-wrap"> 
