@@ -6,13 +6,13 @@ Route::group(['prefix'=>'admin'],function(){
             'as'=>'list',
             'uses'=>'PageController@getDanhsach'
         ]);
-        Route::get('sua/{masp}', [
+        Route::get('sua/{id}', [
             'as'=>'edit',
-            'uses'=>'PageController@getSua'
+            'uses'=>'PageController@getSuaSP'
         ]);
-        Route::post('sua/{masp}', [
+        Route::post('sua/{id}', [
             'as'=>'edit',
-            'uses'=>'PageController@postSua'
+            'uses'=>'PageController@postSuaSP'
         ]);
         Route::get('them', [
             'as'=>'add',
@@ -22,7 +22,7 @@ Route::group(['prefix'=>'admin'],function(){
             'as'=>'add',
             'uses'=>'PageController@postThem'
         ]);
-        Route::get('xoa/{masp}', [
+        Route::get('xoa/{id}', [
             'as'=>'delete',
             'uses'=>'PageController@getXoaSP'
         ]);
@@ -54,40 +54,16 @@ Route::group(['prefix'=>'admin'],function(){
         ]);
     });
 
-});
-<<<<<<< HEAD
 
-Route::group(['prefix'=>'khachhang'],function(){
-        Route::get('danhsach', [
-            'as'=>'listkh',
-            'uses'=>'PageController@getDanhsachkh'
-        ]);
-        Route::get('sua/{id}', [
-            'as'=>'editkh',
-            'uses'=>'PageController@getSuakh'
-        ]);
-        Route::post('sua/{id}', [
-            'as'=>'edittype',
-            'uses'=>'PageController@postSuakh'
-        ]);
-        Route::get('them', [
-            'as'=>'addkh',
-            'uses'=>'PageController@getThemkh'
-        ]);
-        Route::post('them', [
-            'as'=>'addkh',
-            'uses'=>'PageController@postThemkh'
-        ]);
-        Route::get('xoa/{id}', [
-            'as'=>'deletekh',
-            'uses'=>'PageController@getXoakh'
-        ]);
-    });
-=======
+});
+
+
+
+
 //danh muc
   
 
->>>>>>> quanlykhachhang
+
 Route::get('/',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
@@ -105,7 +81,7 @@ Route::get('lien-he',[
     'as'=>'lienhe',
     'uses'=>'PageController@getlienhe'
 ]);
-<<<<<<< HEAD
+
 Route::get('chi-tiet-san-pham/{id}',[
 	'as'=>'chitietsanpham',
 	'uses'=>'PageController@getchitietsanpham'
@@ -159,9 +135,9 @@ Route::get('dang-xuat',[
     'as'=>'logout',
     'uses'=>'PageController@getLogout'
 ]);
-=======
+
 Route::get('chi-tiet-san-pham/{masp}',[
     'as'=>'chitietsanpham',
     'uses'=>'PageController@getchitietsanpham'
 ]);
->>>>>>> quanlykhachhang
+

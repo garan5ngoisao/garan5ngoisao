@@ -33,8 +33,8 @@
                                     <th>{{$sanpham->id_danhmuc}}</th>
                                     <th><img width="200" height="150" src="source/img/{{$sanpham->img}}" alt=""></th>
                          
-                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/sanpham/xoa/{{$sanpham->masp}}"> Delete</a></td>
-                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin.sanpham.sua">Edit</a></td>
+                                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/sanpham/xoa/{{$sanpham->id}}"> Delete</a></td>
+                                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/sanpham/sua/{{$sanpham->id}}">Edit</a></td>
                              </tr>
                             @endforeach
                             

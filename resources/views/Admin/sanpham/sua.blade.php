@@ -5,12 +5,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Cake
-                    <small>Edit</small>
+                <h1 class="page-header">Sửa
+                    <small>Sản Phẩm</small>
                 </h1>
             </div>
-            <form action="admin/cake/sua/{{$cake->id}}" method="POST" enctype="multipart/form-data">
-                @csrf
+            <form action="admin/sanpham/sua/{{$sanpham->id}}" method="POST" enctype="multipart/form-data">
+       <input type="hidden" name="_token" value="{{csrf_token()}}" placeholder="">
                 @if(count($errors)>0)
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
@@ -27,61 +27,44 @@
                     @endif
                     {{-- <input type="hidden" name="_token" value="{{csrf_token()}}" placeholder=""> --}}
                     <div class="form-group">
-                        <label>Category Name</label>
-                        <input class="form-control" name="name" placeholder="Please Enter Name"  value="{{$cake->name}}" />
+                        <label>Tên sản phẩm</label>
+                        <input class="form-control" name="tensp" placeholder="Please Enter Name"  value="{{$sanpham->tensp}}" />
                     </div>
                     <div class="form-group" >
-                        <label>Category Parent</label>
-                        <select class="form-control" name="cake_type" >
-                            @foreach($cake_type as $ct)
-                            <option value="{{$ct->id}}">{{$ct->name}}</option>
+                        <form action="" method="POST">
+                        <label>Tên danh mục</label>
+                        <select class="form-control" name="tendanhmuc" >
+                            @foreach($tendanhmuc as $tdm)
+                                <option
+                                @if($sanpham->id_danhmuc == $tdm->id_danhmuc)
+                                    {{"selected"}}
+                                @endif 
+                                    value="{{$tdm->id_danhmuc}}">{{$tdm->name}}</option>
                             @endforeach
                         </select>
                     </div>
+                       <div class="form-group">
+                        <label>Giá sản phẩm</label>
+                        <input class="form-control" name="giasp" placeholder="Please Enter Unit_price" value="{{$sanpham->giasp}}" />
+                    </div>
                     <div class="form-group">
-                        <label>Category Description</label>
-                        <textarea class="form-control ckeditor" name="description" rows="3" id="demo" >
-                            {{$cake->description}}
+            
+                        <label>Mô tả</label>
+                        <textarea  name="mota" rows="3" id="demo" >
+                            {{$sanpham->mota}}
                         </textarea>
                     </div>
+                   
                     <div class="form-group">
-                        <label>Category image</label>
+                        <label>Hình sản phẩm</label>
                         <p>
-                            <img width="400pc" src="source/image/product/{{$cake->image}}" alt="">
+                            <img width="400px" src="source/img/{{$sanpham->img}}" alt="">
                         </p>
-                            <input type="file" class="form-control" name="image" placeholder="Please Enter hinh" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category Unit_price</label>
-                        <input class="form-control" name="unit_price" placeholder="Please Enter Unit_price" value="{{$cake->unit_price}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category Promotion_price</label>
-                        <input class="form-control" name="promotion_price" placeholder="Please Enter Promotion_price" value="{{$cake->promotion_price}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category unit</label>
-                        <input class="form-control" name="unit" placeholder="Please Enter Unit" value="{{$cake->unit}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category Status</label>
-                        <label class="radio-inline">
-                            <input name="rdoStatus" value="0"
-                            @if($cake->new==0)
-                            {{'checked'}}
-                            @endif
-                            type="radio" >New
-                        </label>
-                        <label class="radio-inline">
-                            <input name="rdoStatus" value="1"
-                            @if($cake->new==1)
-                            {{'checked'}}
-                            @endif
-                            type="radio">Old
-                        </label>
+                            <input type="file" class="form-control" name="img" placeholder="Please Enter hinh" />
                     </div>
 
-                    <button type="submit" class="btn btn-default">Category Edit</button>
+
+                    <button type="submit" class="btn btn-default">Sua</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
                     </div>

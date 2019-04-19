@@ -25,7 +25,7 @@
                         <tbody>
                             @foreach($kh as $khachhang)
                                 <tr class="odd gradeX" align="center">
-                                    <th>{{$khachhang->id}}</th>
+                                    <th>{{$khachhang->mahk}}</th>
                                     <th>{{$khachhang->tenkh}}</th>
                                     <th>{{$khachhang->diachi}}</th>
                                     <th>{{$khachhang->sodienthoai}}</th>
